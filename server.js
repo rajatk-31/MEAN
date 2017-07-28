@@ -42,18 +42,18 @@ app.post('/registerNewDogy',function(req,res){
 app.put('/updateDogy',function(req,res){
     var dogid = req.body.collar_id;
     var dog2={'name':req.body.name,'age':req.body.age,'collar_id':dogid}
-    dog.findOneAndUpdate(dogid, {$set:dog2}, {new: true}, function(err, doc){
+    dog.findOneAndUpdate({collar_id: dogid}, {$set:dog2}, {new: true}, function(err, doc){
     	if(err){
     		console.log(err)
     	}
         res.json(data)
 	})
 })
-
+/*
 app.delete('/deletedogy'function(req,res){
 	var dogid=req.body.collar_id;
-	
-})
+
+})*/
 
 
 
